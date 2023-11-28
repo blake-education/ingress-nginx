@@ -16,7 +16,7 @@ jobs:
       pull-requests: read  # for dorny/paths-filter to read pull requests
     runs-on: ubuntu-latest
     if: |
-      (github.repository == 'kubernetes/ingress-nginx')
+      (github.repository == 'blake-education/ingress-nginx')
     outputs:
       docs: ${{ steps.filter.outputs.docs }}
       charts: ${{ steps.filter.outputs.charts }}
@@ -56,7 +56,7 @@ jobs:
     needs:
       - changes
     if: |
-      (github.repository == 'kubernetes/ingress-nginx') &&
+      (github.repository == 'blake-education/ingress-nginx') &&
       (needs.changes.outputs.charts == 'true')
 
     steps:
